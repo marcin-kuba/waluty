@@ -1,9 +1,20 @@
 .app-toolbar {
+  padding: 0 8px;
   font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+  background: transparent;
 }
 
-.app-toolbar__btn-menu {
-  margin-right: 12px;
+.app-toolbar__brand {
+  flex-grow: 1;
+  font-size: 15px;
+  font-weight: 800;
+
+  > span {
+    font-weight: 300;
+    opacity: .65;
+  }
 }
 
 .app-toolbar__logo {
