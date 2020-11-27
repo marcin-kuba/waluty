@@ -50,7 +50,7 @@ Users ({{ (totalCount$ | async) }})
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<div *ngIf="dataSourceForTable.data.length === 0 && !(loading$ | async)" class="row-info">
+<div *ngIf="dataSourceForTable.data.length === 0 && (loading$ | async) === false" class="row-info">
   No users found.
 </div>
 
