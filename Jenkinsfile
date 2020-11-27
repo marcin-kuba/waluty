@@ -12,27 +12,35 @@ pipeline {
         git branch: 'witaj-swiecie', credentialsId: 'githubMarcinCredential', url: 'git@github.com:marcin-kuba/waluty.git'
       }
     }
-    stage('Install') {
+    stage('Install and build app') {
       agent {
         docker {
           image 'node:14.3.0-stretch'
           reuseNode true
         }
       }
-      steps {
-        sh 'npm install'
+
+      stages {
+        stage('Install packages') {
+          steps {
+            sh 'npm install'
+          }
+        }
+
+        stage('Lint') {
+          steps {
+            sh 'npm run lint'
+          }
+        }
+
+        stage('Build') {
+          steps {
+            sh "npm run build"
+          }
+        }
       }
     }
-    stage('Lint') {
-      steps {
-        sh 'npm run lint'
-      }
-    }
-    stage('Build') {
-      steps {
-        sh "npm run build"
-      }
-    }
+
     stage('Docker build image') {
       steps {
         sh 'docker build -f "Dockerfile" -t $IMAGE_NAME:$BUILD_NUMBER -t $IMAGE_NAME:latest .'
