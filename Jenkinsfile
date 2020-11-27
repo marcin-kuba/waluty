@@ -15,7 +15,7 @@ pipeline {
     stage('Install') {
       agent {
         docker {
-          image 'node:14.3.0-stretch'
+          image "gradle:6.7.0-jdk11"
           reuseNode true
         }
       }
