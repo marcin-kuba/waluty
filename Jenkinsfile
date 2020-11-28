@@ -7,12 +7,12 @@ pipeline {
   }
 
   stages {
-    stage('Cloning our GIT') {
+    stage('GIT cloning project') {
       steps {
         git branch: 'witaj-swiecie', credentialsId: 'githubMarcinCredential', url: 'git@github.com:marcin-kuba/waluty.git'
       }
     }
-    stage('Install and build app') {
+    stage('Docker pull nodejs') {
       agent {
         docker {
           image 'node:14.3.0-stretch'
@@ -21,7 +21,7 @@ pipeline {
       }
 
       stages {
-        stage('Install packages') {
+        stage('NPM install') {
           steps {
             sh 'npm install'
           }
@@ -33,7 +33,7 @@ pipeline {
           }
         }
 
-        stage('Build') {
+        stage('Build app') {
           steps {
             sh "npm run build"
           }
