@@ -43,7 +43,7 @@ pipeline {
 
     stage('Docker build image') {
       steps {
-        sh 'docker build -f "Dockerfile" -t $IMAGE_NAME:$BUILD_NUMBER -t $IMAGE_NAME:latest ./'
+        sh 'docker build -f "Dockerfile" -t $IMAGE_NAME:$BUILD_NUMBER -t $IMAGE_NAME:latest /var/jenkins_home/workspace/prod-waluty-frontend'
       }
     }
     stage('Docker publish image') {
