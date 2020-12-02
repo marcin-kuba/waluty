@@ -42,7 +42,7 @@ pipeline {
     }
     stage('Docker publish image') {
       steps {
-        withDockerRegistry([credentialsId: "githubMarcinCredential", url: ""]) {
+        withDockerRegistry([credentialsId: "dockerhubMarcinCredential", url: ""]) {
           sh 'docker push $IMAGE_NAME:$BUILD_NUMBER'
           sh 'docker push $IMAGE_NAME:latest'
         }
@@ -50,7 +50,7 @@ pipeline {
     }
     stage('Swarm update service') {
       steps {
-        withDockerRegistry([credentialsId: "githubMarcinCredential", url: ""]) {
+        withDockerRegistry([credentialsId: "dockerhubMarcinCredential", url: ""]) {
           sh 'docker service update --with-registry-auth --image $IMAGE_NAME:$BUILD_NUMBER  prod-waluty_frontend'
         }
       }
