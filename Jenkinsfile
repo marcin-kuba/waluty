@@ -32,12 +32,6 @@ pipeline {
             sh 'npm run lint'
           }
         }
-
-        stage('Build app') {
-          steps {
-            sh "npm run build"
-          }
-        }
       }
     }
 
