@@ -1,116 +1,38 @@
 <div class="page-content">
-  <section class="home-highlight">
-    <h1 class="mat-display-1 home-display">Welcome to angular-starter-app!</h1>
-    <img src="assets/logo.svg" alt="">
+  <section>
+    <mat-list>
+      <div mat-subheader>Listing</div>
+      <mat-list-item *ngFor="let crypto of (cryptocurrency$ | async).data" style="background: #fff; border-bottom: 3px solid #fafafa">
+        <mat-icon mat-list-icon>help_outline</mat-icon>
+        <div mat-line style="font-weight: 700">{{crypto.name}}</div>
+        <div mat-line style="font-weight: 500; font-size: 12px; opacity: .66">{{crypto.symbol}}</div>
+        <div style="text-align: right; ">
+<!--          <div style="font-weight: 700">12 345<span style="font-size: 12px; opacity: .5">.67</span> PLN</div>-->
+          <div style="font-weight: 700">{{crypto.quote.PLN.price}} PLN</div>
+          <div style="font-weight: 500; font-size: 11px">
+            <span>
+              <span style="display: inline-block; padding-left: 21px; position: relative; color: #ef5350; ">
+                <mat-icon style="position: absolute; top: -2px; left: 0;">arrow_drop_down</mat-icon> {{crypto.quote.PLN.percent_change_6h}}%
+              </span>
+              <span style="color: #bdbdbd; margin-left: 4px;">6h</span>
+            </span>
+            <span style="width: 6px; display: inline-block"></span>
+            <span>
+              <span style="display: inline-block; padding-left: 21px; position: relative; color: #66bb6a; ">
+                <mat-icon style="position: absolute; top: -2px; left: 0;">arrow_drop_up</mat-icon> {{crypto.quote.PLN.percent_change_24h}}%
+              </span>
+              <span style="color: #bdbdbd; margin-left: 4px;">24h</span>
+            </span>
+            <span style="width: 6px; display: inline-block"></span>
+            <span>
+              <span style="display: inline-block; padding-left: 21px; position: relative; color: #66bb6a; ">
+                <mat-icon style="position: absolute; top: -2px; left: 0;">arrow_drop_up</mat-icon> {{crypto.quote.PLN.percent_change_7d}}%
+              </span>
+              <span style="color: #bdbdbd; margin-left: 4px;">7d</span>
+            </span>
+          </div>
+        </div>
+      </mat-list-item>
+    </mat-list>
   </section>
-
-  <section class="home-modules">
-    <header class="home-modules__header">
-      <p>
-        Angular Starter App is real word boilerplate to speedup your development.
-        Just focus on your main features and dont waist your time on setting up the whole necessary angular environment.
-        Using this starter you will save a lot of hours and this will make sure that you are creating your app following
-        the best practise
-      </p>
-    </header>
-
-    <div class="row">
-      <div class="col">
-        <mat-card class="home-card">
-          <mat-card-header>
-            <div mat-card-avatar class="home-card__header-image">
-              <mat-icon color="accent" aria-hidden="false" aria-label="Example Module" class="home-card__header-icon">
-                star_border
-              </mat-icon>
-            </div>
-            <mat-card-title>Examples</mat-card-title>
-            <mat-card-subtitle>feature module</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <p>
-              This feature shows basic usage of notifications, local storage, offline indicator, http error handler
-              and loading interceptor.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" [routerLink]="['/', 'examples']">Check it out!</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-
-      <div class="col">
-        <mat-card class="home-card">
-          <mat-card-header>
-            <div mat-card-avatar class="home-card__header-image">
-              <mat-icon  color="accent" aria-hidden="false" aria-label="Posts Module" class="home-card__header-icon">
-                notes
-              </mat-icon>
-            </div>
-            <mat-card-title>Posts</mat-card-title>
-            <mat-card-subtitle>feature module</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <p>
-              This feature module is using @ngrx/store & @ngrx/effects.
-              It operates on posts and makes all CRUD actions on it.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" [routerLink]="['/', 'posts']">Check it out!</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-
-      <div class="col">
-        <mat-card class="home-card">
-          <mat-card-header>
-            <div mat-card-avatar class="home-card__header-image">
-              <mat-icon color="accent" aria-hidden="false" aria-label="Todos Module" class="home-card__header-icon">
-                done_outline
-              </mat-icon>
-            </div>
-            <mat-card-title>Todos</mat-card-title>
-            <mat-card-subtitle>feature module</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <p>
-              This feature module is using @ngrx/entity & @ngrx/effects.
-              It operates on todos and make all CRUD actions on it.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" [routerLink]="['/', 'todos']">Check it out!</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-
-      <div class="col">
-        <mat-card class="home-card">
-          <mat-card-header>
-            <div mat-card-avatar class="home-card__header-image">
-              <mat-icon color="accent" aria-hidden="false" aria-label="Todos Module" class="home-card__header-icon">
-                done_outline
-              </mat-icon>
-            </div>
-            <mat-card-title>Users</mat-card-title>
-            <mat-card-subtitle>feature module</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <p>
-              This feature module is using @ngrx/entity & @ngrx/effects.
-              It operates on todos and make all CRUD actions on it.
-            </p>
-          </mat-card-content>
-          <mat-card-actions>
-            <button mat-button color="primary" [routerLink]="['/', 'users']">Check it out!</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-    </div>
-  </section>
-
-  <div class="home-docs">
-    Want to know more about angular-starter-app read
-    <a href="https://matsta25.gitlab.io/angular-starter-app/docs/">documentation</a>, please.
-  </div>
 </div>
