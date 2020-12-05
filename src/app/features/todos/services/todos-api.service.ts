@@ -15,18 +15,18 @@ export class TodosApiService implements ApiServiceModel<Todo> {
   }
 
   public createItem(todo: Todo): Observable<object> {
-    return this.http.post(`${environment.baseUrl}${TODOS_API_ENDPOINT}`, todo)
+    return this.http.post(`${environment.apiUrl}${TODOS_API_ENDPOINT}`, todo)
   }
 
   public readItems(): Observable<object> {
-    return this.http.get(`${environment.baseUrl}${TODOS_API_ENDPOINT}`)
+    return this.http.get(`${environment.apiUrl}${TODOS_API_ENDPOINT}`)
   }
 
   public updateItem(id: string, changes: Partial<Todo>): Observable<object> {
-    return this.http.put(`${environment.baseUrl}${TODOS_API_ENDPOINT}/${id}`, changes)
+    return this.http.put(`${environment.apiUrl}${TODOS_API_ENDPOINT}/${id}`, changes)
   }
 
   public deleteItem(id: string): Observable<object> {
-    return this.http.delete(`${environment.baseUrl}${TODOS_API_ENDPOINT}/${id}`)
+    return this.http.delete(`${environment.apiUrl}${TODOS_API_ENDPOINT}/${id}`)
   }
 }

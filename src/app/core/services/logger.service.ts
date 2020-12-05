@@ -13,7 +13,8 @@ export class LoggerService {
 
   public logError(error: any) {
     const errMessage: ErrMessage = this.createErrMessage(error)
-    this.http.post(`${environment.baseUrl}/err-logs`, errMessage).subscribe()
+    // TODO: create logger
+    // this.http.post(`/error-logger`, errMessage).subscribe()
   }
 
   private createErrMessage(error: any): ErrMessage {

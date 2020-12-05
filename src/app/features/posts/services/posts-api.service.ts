@@ -15,22 +15,22 @@ export class PostsApiService implements ApiServiceModel<Post> {
   }
 
   public createItem(post: Post): Observable<object> {
-    return this.http.post(`${environment.baseUrl}${POSTS_API_ENDPOINT}`, post)
+    return this.http.post(`${environment.apiUrl}${POSTS_API_ENDPOINT}`, post)
   }
 
   public readItems(): Observable<object> {
-    return this.http.get(`${environment.baseUrl}${POSTS_API_ENDPOINT}`)
+    return this.http.get(`${environment.apiUrl}${POSTS_API_ENDPOINT}`)
   }
 
   public readItem(id: string): Observable<object> {
-    return this.http.get(`${environment.baseUrl}${POSTS_API_ENDPOINT}/${id}`)
+    return this.http.get(`${environment.apiUrl}${POSTS_API_ENDPOINT}/${id}`)
   }
 
   public updateItem(id: string, changes: Partial<Post>): Observable<object> {
-    return this.http.put(`${environment.baseUrl}${POSTS_API_ENDPOINT}/${id}`, changes)
+    return this.http.put(`${environment.apiUrl}${POSTS_API_ENDPOINT}/${id}`, changes)
   }
 
   public deleteItem(id: string): Observable<object> {
-    return this.http.delete(`${environment.baseUrl}${POSTS_API_ENDPOINT}/${id}`)
+    return this.http.delete(`${environment.apiUrl}${POSTS_API_ENDPOINT}/${id}`)
   }
 }
