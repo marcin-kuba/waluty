@@ -41,8 +41,6 @@ $display2-line-height: 48px;
 
 $app-primary: mat-palette($mat-blue);
 $app-accent: mat-palette($mat-pink, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
 $app-warn: mat-palette($mat-red);
 
 $color-primary: map-get($app-primary, 500);
@@ -56,10 +54,8 @@ $link-hover-decoration: underline;
 
 $body-bg: map-get($mat-gray, 50);
 
-$page-header-bg: map-get($app-primary, 50);
-
 
 // ng-progress
 
 $progress-bar-height: 3px;
-$progress-bar-color: map-get(mat-palette($mat-red), 600);
+$progress-bar-color: map-get($app-primary, 600);

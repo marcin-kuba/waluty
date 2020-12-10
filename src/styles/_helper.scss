@@ -59,19 +59,6 @@
   text-align: right !important;
 }
 
-.floating-action {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1010;
-}
-
-.squeeze {
-  max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .text-danger {
   color: $color-danger !important;
 }
