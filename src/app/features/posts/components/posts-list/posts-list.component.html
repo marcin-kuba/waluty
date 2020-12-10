@@ -1,11 +1,11 @@
 <div *ngIf="posts$ | async as posts">
-  <app-page-header>
+  <app-header>
     <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
     <app-page-header-title [addons]="posts.length">Posts List</app-page-header-title>
     <button mat-icon-button color="primary" aria-label="Reload" class="ml-auto" (click)="onRefresh()">
       <mat-icon>refresh</mat-icon>
     </button>
-  </app-page-header>
+  </app-header>
 
   <div class="floating-action">
     <button mat-fab color="primary" aria-label="Add new item" [routerLink]="['/','posts','create']">

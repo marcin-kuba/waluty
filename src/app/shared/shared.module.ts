@@ -7,7 +7,7 @@ import { BackButtonDirective } from './directives/back-button.directive'
 import { InputDebounceDirective } from './directives/input-debounce.directive'
 import { UnsavedChangesGuard } from './services/unsaved-changes.guard'
 import { NotificationBarComponent } from './components/notification-bar/notification-bar.component'
-import { PageHeaderComponent } from './components/page-header/page-header.component'
+import { HeaderComponent } from './components/header/header.component'
 import { PageHeaderBackComponent } from './components/page-header-back/page-header-back.component'
 import { PageHeaderTitleComponent } from './components/page-header-title/page-header-title.component'
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
@@ -23,7 +23,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     InputDebounceDirective,
     NotificationBarComponent,
     ConfirmDialogComponent,
-    PageHeaderComponent,
+    HeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
   ],
@@ -39,7 +39,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     MaterialModule,
     BackButtonDirective,
     InputDebounceDirective,
-    PageHeaderComponent,
+    HeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
   ],

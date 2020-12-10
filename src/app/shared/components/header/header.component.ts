@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core'
+import { Component } from '@angular/core'
 
 
 @Component({
@@ -7,5 +7,4 @@ import { Component, EventEmitter, Output } from '@angular/core'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Output() sidenavIconClick = new EventEmitter()
 }

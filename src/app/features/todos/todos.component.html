@@ -1,11 +1,11 @@
 <div *ngIf="todos$ | async as todos">
-  <app-page-header>
+  <app-header>
     <app-page-header-back [link]="'/'" ariaLabel="Back to homepage"></app-page-header-back>
     <app-page-header-title [addons]="todos.length">To-do list</app-page-header-title>
     <button mat-icon-button color="primary" aria-label="Reload" class="ml-auto">
       <mat-icon>refresh</mat-icon>
     </button>
-  </app-page-header>
+  </app-header>
 
   <div class="page-content">
     <div class="squeeze">
