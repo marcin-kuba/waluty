@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component'
 import { PageHeaderBackComponent } from './components/page-header-back/page-header-back.component'
 import { PageHeaderTitleComponent } from './components/page-header-title/page-header-title.component'
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
+import { CryptoListComponent } from '../features/crypto/components/crypto-list/crypto-list.component'
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     HeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
+    CryptoListComponent,
   ],
   entryComponents: [
     NotificationBarComponent,
@@ -42,6 +44,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     HeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
+    CryptoListComponent,
   ],
 })
 
