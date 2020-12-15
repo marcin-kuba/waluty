@@ -7,12 +7,12 @@ pipeline {
   }
 
   stages {
-    stage('GIT cloning project') {
+    stage('git cloning project') {
       steps {
         git branch: 'main', credentialsId: 'githubMarcinCredential', url: 'git@github.com:marcin-kuba/waluty-frontend.git'
       }
     }
-    stage('Docker pull nodejs') {
+    stage('docker pull nodejs') {
       agent {
         docker {
           image 'node:14.3.0-stretch'
@@ -21,41 +21,52 @@ pipeline {
       }
 
       stages {
-        stage('NPM install') {
+        stage('npm install') {
           steps {
             sh 'npm install'
           }
         }
 
-        stage('Lint') {
+        stage('chrome install') {
           steps {
-            sh 'npm run lint'
+            sh 'wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+            sh 'apt-get update'
+            sh 'apt install --yes ./google-chrome-stable_current_amd64.deb'
+          }
+        }
+
+        stage('e2e tests') {
+          steps {
+            sh 'npm run e2e'
           }
         }
       }
     }
 
-    stage('Docker build image') {
+    stage('docker build image') {
       steps {
         sh 'docker build -f "Dockerfile" -t $IMAGE_NAME:$BUILD_NUMBER -t $IMAGE_NAME:latest .'
       }
     }
-    stage('Docker publish image') {
+
+    stage('docker publish image') {
       steps {
-        withDockerRegistry([credentialsId: "dockerhubMarcinCredential", url: ""]) {
+        withDockerRegistry([credentialsId: 'dockerhubMarcinCredential', url: '']) {
           sh 'docker push $IMAGE_NAME:$BUILD_NUMBER'
           sh 'docker push $IMAGE_NAME:latest'
         }
       }
     }
-    stage('Swarm update service') {
+
+    stage('swarm update service') {
       steps {
-        withDockerRegistry([credentialsId: "dockerhubMarcinCredential", url: ""]) {
+        withDockerRegistry([credentialsId: 'dockerhubMarcinCredential', url: '']) {
           sh 'docker service update --with-registry-auth --image $IMAGE_NAME:$BUILD_NUMBER prod-waluty_frontend'
         }
       }
     }
-    stage('Cleaning up') {
+
+    stage('cleaning up') {
       steps {
         sh 'docker rmi $IMAGE_NAME:$BUILD_NUMBER'
       }
