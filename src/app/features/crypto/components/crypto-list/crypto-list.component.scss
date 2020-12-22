@@ -1,0 +1,18 @@
+@import "../../../../../styles/variables";
+$crypto-list-sep: 2px;
+
+
+.crypto-list {
+  padding-top: 0;
+  margin-left: $crypto-list-sep;
+  margin-right: $crypto-list-sep;
+}
+
+.crypto-list__item {
+  margin-bottom: $crypto-list-sep;
+  background-color: #fff;
+}
+
+.crypto-list__subtitle {
+  color: map-get($mat-gray, 500);
+}

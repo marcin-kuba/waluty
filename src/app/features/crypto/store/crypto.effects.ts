@@ -4,7 +4,7 @@ import { catchError, map, switchMap } from 'rxjs/operators'
 import { Actions, createEffect, ofType } from '@ngrx/effects'
 import { CryptoApiService } from '../service/crypto-api.service'
 import { HttpResponseModel } from '../../../shared/models/http-response-model.model'
-import { CryptoListItemModel } from '../model/crypto.model'
+import { CryptoModel } from '../model/crypto.model'
 import { readCryptoList, readCryptoListSuccess, readCryptoListFail } from './crypto.actions'
 
 
@@ -17,7 +17,7 @@ export class CryptoEffects {
   readCryptoList$ = createEffect(() => this.actions$.pipe(
     ofType(readCryptoList.type),
     switchMap(() => this.apiService.readCryptoList().pipe(
-      map((response: HttpResponseModel<CryptoListItemModel[]>) => ({
+      map((response: HttpResponseModel<CryptoModel[]>) => ({
         type: readCryptoListSuccess.type,
         cryptoList: response.data,
       })),

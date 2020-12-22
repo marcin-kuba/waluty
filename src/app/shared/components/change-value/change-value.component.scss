@@ -1,0 +1,24 @@
+@import "../../../../styles/variables";
+
+
+.crypto-change-value_up {
+  color: map-get($mat-green, 500);
+}
+
+.crypto-change-value_down {
+  color: map-get($mat-red, 500);
+}
+
+.crypto-change-value__bg {
+  display: inline-block;
+  padding: 0 2px 0 5px;
+  line-height: 1.44;
+}
+
+.crypto-change-value__bg_up {
+  background: rgba(map-get($mat-green, 50), .75);
+}
+
+.crypto-change-value__bg_down {
+  background: rgba(map-get($mat-red, 50), .75);
+}

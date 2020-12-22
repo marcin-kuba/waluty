@@ -1,0 +1,11 @@
+<span *ngIf="value > 0" class="crypto-change-value_up">
+  <span class="crypto-change-value__bg crypto-change-value__bg_up">+ {{ value }}%</span>
+</span>
+
+<span *ngIf="value < 0" class="crypto-change-value_down">
+  <span class="crypto-change-value__bg crypto-change-value__bg_down">- {{ value | abs }}%</span>
+</span>
+
+<span *ngIf="value === 0">
+  <span class="crypto-change-value__bg">{{ value }}%</span>
+</span>

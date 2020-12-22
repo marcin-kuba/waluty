@@ -1,11 +1,11 @@
 @import "../../../../styles/variables";
 
 .home__logo {
-  font-size: $font-size-base;
-  font-weight: $font-weight-light;
+  font-size: 12px;
+  font-weight: map-get($font-weights, "light");
 
   strong {
-    font-weight: $font-weight-black;
+    font-weight: map-get($font-weights, "black");
     color: map-get($mat-gray, 900);
   }
 }
