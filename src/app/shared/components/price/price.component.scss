@@ -1,0 +1,6 @@
+@import "../../../../styles/variables";
+
+
+.price__fraction {
+  font-weight: map-get($font-weights, "normal");
+}

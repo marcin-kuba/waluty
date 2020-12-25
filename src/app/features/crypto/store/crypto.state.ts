@@ -1,8 +1,8 @@
-import { CryptoListItemModel } from '../model/crypto.model'
+import { CryptoModel } from '../model/crypto.model'
 
 
 export interface CryptoState {
-  cryptoList: CryptoListItemModel[]
+  cryptoList: CryptoModel[]
 }
 
 export const initialCryptoState: CryptoState = {

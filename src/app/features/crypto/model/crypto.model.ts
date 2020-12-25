@@ -1,21 +1,14 @@
-export interface CryptoListItemModel {
-  symbol: CryptoSymbol
+export interface CryptoModel {
+  symbol: string
   lastupdated: string
-  quote: {[currency in CurrencySymbol]: CryptoListCurrencyModel}
+  quote: {[currency in CurrencySymbol]: CryptoQuoteModel}
 }
 
-export interface CryptoListCurrencyModel {
+export interface CryptoQuoteModel {
   price: number
   percent_change_6h: number
   percent_change_24h: number
   percent_change_7d: number
-}
-
-export enum CryptoSymbol {
-  BCC = 'BCC',
-  BTC = 'BTC',
-  LSK = 'LSK',
-  ETH = 'ETH',
 }
 
 export enum CurrencySymbol {

@@ -1,5 +1,6 @@
-import { ErrorHandler, NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { ErrorHandler, LOCALE_ID, NgModule } from '@angular/core'
+import { CommonModule, registerLocaleData } from '@angular/common'
+import localePl from '@angular/common/locales/pl'
 import { HttpClientModule } from '@angular/common/http'
 import { environment } from '../../environments/environment'
 
@@ -14,6 +15,8 @@ import { httpInterceptorProviders } from './interceptors'
 import { ProgressComponent } from './components/progress/progress.component'
 import { NgProgressModule } from 'ngx-progressbar'
 import { NgProgressHttpModule } from 'ngx-progressbar/http'
+
+registerLocaleData(localePl)
 
 
 @NgModule({
@@ -36,6 +39,7 @@ import { NgProgressHttpModule } from 'ngx-progressbar/http'
   providers: [
     ...httpInterceptorProviders,
     {provide: ErrorHandler, useClass: ErrorHandlerService},
+    {provide: LOCALE_ID, useValue: 'pl'},
   ],
   exports: [
     ProgressComponent,

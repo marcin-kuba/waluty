@@ -12,6 +12,10 @@ import { PageHeaderBackComponent } from './components/page-header-back/page-head
 import { PageHeaderTitleComponent } from './components/page-header-title/page-header-title.component'
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
 import { CryptoListComponent } from '../features/crypto/components/crypto-list/crypto-list.component'
+import { ChangeValueComponent } from './components/change-value/change-value.component'
+import { CryptoNamePipe } from '../features/crypto/service/crypto-name.pipe'
+import { AbsPipe } from './services/abs.pipe'
+import { PriceComponent } from './components/price/price.component'
 
 
 @NgModule({
@@ -28,6 +32,10 @@ import { CryptoListComponent } from '../features/crypto/components/crypto-list/c
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
     CryptoListComponent,
+    ChangeValueComponent,
+    CryptoNamePipe,
+    AbsPipe,
+    PriceComponent,
   ],
   entryComponents: [
     NotificationBarComponent,
@@ -45,6 +53,8 @@ import { CryptoListComponent } from '../features/crypto/components/crypto-list/c
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
     CryptoListComponent,
+    CryptoNamePipe,
+    AbsPipe,
   ],
 })
 
