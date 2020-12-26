@@ -14,7 +14,6 @@
     "lint:scss": "stylelint \"./src/**/*.scss\"",
     "lint-fix": "ng lint --fix",
     "e2e": "ng e2e",
-    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
     "mock": "json-server ./mock/index.js --routes ./mock/routes.json"
   },
   "private": true,
