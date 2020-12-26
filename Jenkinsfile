@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('git cloning project') {
       steps {
-        git branch: 'main', credentialsId: 'githubMarcinCredential', url: 'git@github.com:marcin-kuba/waluty-frontend.git'
+        git branch: 'unitt', credentialsId: 'githubMarcinCredential', url: 'git@github.com:marcin-kuba/waluty-frontend.git'
       }
     }
     stage('docker pull nodejs') {
