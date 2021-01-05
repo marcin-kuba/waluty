@@ -2,7 +2,8 @@
 // application-wide Sass variables
 
 
-$font-family-base: 'Inter, "Helvetica Neue", sans-serif';
+$font-family-base: 'Roboto, "Helvetica Neue", sans-serif';
+$font-family-brand: 'Rubik, Roboto, "Helvetica Neue", sans-serif';
 $font-size-base: 14px;
 
 $font-weights: () !default;
@@ -12,7 +13,6 @@ $font-weights: map-merge((
   "medium": 500,
   "semibold": 600,
   "bold": 700,
-  "extrabold": 800,
 ), $font-weights);
 
 $line-height-base: 20px;
@@ -25,23 +25,32 @@ $button-font-weight: 500;
 $h1-font-size: 24px;
 $h1-font-weight: map-get($font-weights, "normal");
 $h1-line-height: 32px;
-$h2-font-size: 18px;
-$h2-font-weight: map-get($font-weights, "extrabold");
+$h1-font-family: $font-family-brand;
+$h2-font-size: 20px;
+$h2-font-weight: map-get($font-weights, "bold");
 $h2-line-height: 32px;
+$h2-font-family: $font-family-brand;
 $h3-font-size: 16px;
 $h3-font-weight: map-get($font-weights, "normal");
 $h3-line-height: 28px;
+$h3-font-family: $font-family-brand;
 $h4-font-size: 15px;
 $h4-font-weight: map-get($font-weights, "normal");
 $h4-line-height: 24px;
+$h4-font-family: $font-family-brand;
 
 $display1-font-size: 34px;
 $display1-font-weight: map-get($font-weights, "normal");
 $display1-line-height: 40px;
+$display1-font-family: $font-family-brand;
 
 $display2-font-size: 45px;
 $display2-font-weight: map-get($font-weights, "normal");
 $display2-line-height: 48px;
+$display2-font-family: $font-family-brand;
+
+$transition-duration-base: .25s;
+$transition-timing-function-base: ease;
 
 $spacer: 16px;
 $spacers: ();

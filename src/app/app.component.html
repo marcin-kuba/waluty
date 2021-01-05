@@ -1,9 +1,9 @@
 <app-progress></app-progress>
 
-<div class="app-content">
-  <main class="app-content__main">
+<div class="app-content" fxLayout="column">
+  <main class="app-content__main" fxLayout="column" fxFlex="grow">
     <router-outlet></router-outlet>
   </main>
 
-  <app-footer></app-footer>
+  <app-bottom-navigation></app-bottom-navigation>
 </div>

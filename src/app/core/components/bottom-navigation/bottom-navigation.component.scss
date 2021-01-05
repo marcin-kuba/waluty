@@ -1,0 +1,32 @@
+@import "../../../../styles/variables";
+
+
+:host {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+
+.bottom-navigation__wrapper {
+  @include mat-elevation(4);
+  background-color: #fff;
+}
+
+.bottom-navigation {
+  max-width: 360px;
+  height: 100%;
+}
+
+.bottom-navigation__item {
+  height: 100%;
+  font-size: $font-size-base;
+  font-weight: map-get($font-weights, "medium");
+  color: map-get($mat-gray, 600);
+  line-height: 1.25;
+  text-decoration: none;
+  transition: color $transition-duration-base $transition-timing-function-base;
+
+  &.active {
+    color: map-get($app-primary, 700);
+  }
+}
