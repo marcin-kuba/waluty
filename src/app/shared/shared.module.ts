@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
+import { FlexLayoutModule } from '@angular/flex-layout'
 import { MaterialModule } from './material.module'
 
 import { sharedInterceptorProviders } from './interceptors'
@@ -21,6 +22,7 @@ import { PriceComponent } from './components/price/price.component'
 @NgModule({
   imports: [
     CommonModule,
+    FlexLayoutModule,
     MaterialModule,
   ],
   declarations: [
@@ -46,6 +48,7 @@ import { PriceComponent } from './components/price/price.component'
     UnsavedChangesGuard,
   ],
   exports: [
+    FlexLayoutModule,
     MaterialModule,
     BackButtonDirective,
     InputDebounceDirective,
