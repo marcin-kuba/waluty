@@ -5,11 +5,13 @@ import { SharedModule } from '../../shared/shared.module'
 import { CryptoRoutingModule } from './crypto-routing.module'
 import { CryptoComponent } from './crypto.component'
 import { CryptoDetailsComponent } from './components/crypto-details/crypto-details.component'
+import { CryptoListComponent } from './components/crypto-list/crypto-list.component'
 
 
 @NgModule({
   declarations: [
     CryptoComponent,
+    CryptoListComponent,
     CryptoDetailsComponent,
   ],
   imports: [
@@ -17,6 +19,9 @@ import { CryptoDetailsComponent } from './components/crypto-details/crypto-detai
     HttpClientModule,
     SharedModule,
     CryptoRoutingModule,
+  ],
+  exports: [
+    CryptoListComponent,
   ],
 })
 export class CryptoModule {

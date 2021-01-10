@@ -6,7 +6,6 @@ import { CoreModule } from './core/core.module'
 import { SharedModule } from './shared/shared.module'
 
 import { AppComponent } from './app.component'
-import { HomeComponent } from './core/components/home/home.component'
 import { BottomNavigationComponent } from './core/components/bottom-navigation/bottom-navigation.component'
 import { NotificationPageComponent } from './core/components/notification-page/notification-page.component'
 
@@ -14,7 +13,6 @@ import { NotificationPageComponent } from './core/components/notification-page/n
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     BottomNavigationComponent,
     NotificationPageComponent, // TODO: After creating HeaderComponent move it to declarations of CoreModule
   ],

@@ -12,7 +12,6 @@ import { HeaderComponent } from './components/header/header.component'
 import { PageHeaderBackComponent } from './components/page-header-back/page-header-back.component'
 import { PageHeaderTitleComponent } from './components/page-header-title/page-header-title.component'
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component'
-import { CryptoListComponent } from '../features/crypto/components/crypto-list/crypto-list.component'
 import { ChangeValueComponent } from './components/change-value/change-value.component'
 import { CryptoNamePipe } from '../features/crypto/service/crypto-name.pipe'
 import { AbsPipe } from './services/abs.pipe'
@@ -33,11 +32,10 @@ import { PriceComponent } from './components/price/price.component'
     HeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
-    CryptoListComponent,
     ChangeValueComponent,
+    PriceComponent,
     CryptoNamePipe,
     AbsPipe,
-    PriceComponent,
   ],
   entryComponents: [
     NotificationBarComponent,
@@ -55,7 +53,8 @@ import { PriceComponent } from './components/price/price.component'
     HeaderComponent,
     PageHeaderBackComponent,
     PageHeaderTitleComponent,
-    CryptoListComponent,
+    ChangeValueComponent,
+    PriceComponent,
     CryptoNamePipe,
     AbsPipe,
   ],

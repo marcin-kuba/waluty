@@ -15,6 +15,8 @@ import { httpInterceptorProviders } from './interceptors'
 import { ProgressComponent } from './components/progress/progress.component'
 import { NgProgressModule } from 'ngx-progressbar'
 import { NgProgressHttpModule } from 'ngx-progressbar/http'
+import { DashboardModule } from '../features/dashboard/dashboard.module'
+import { CryptoModule } from '../features/crypto/crypto.module'
 
 registerLocaleData(localePl)
 
@@ -35,6 +37,10 @@ registerLocaleData(localePl)
     // ngProgess
     NgProgressModule.withConfig({spinner: false}),
     NgProgressHttpModule,
+
+    // app
+    DashboardModule,
+    CryptoModule,
   ],
   providers: [
     ...httpInterceptorProviders,
