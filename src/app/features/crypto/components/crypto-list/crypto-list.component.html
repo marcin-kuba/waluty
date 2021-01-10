@@ -1,8 +1,8 @@
 <mat-list class="crypto-list">
-  <mat-list-item *ngFor="let crypto of cryptoList$ | async" class="crypto-list__item">
+  <mat-list-item *ngFor="let crypto of cryptoList$ | async" class="crypto-list__item" [routerLink]="['/', 'crypto', crypto.symbol]">
     <i class="cc" mat-list-icon [ngClass]="crypto.symbol"></i>
     <div mat-line>
-      <div class="font-weight-bold">{{crypto | cryptoName}}</div>
+      <div class="font-weight-bold">{{crypto.symbol | cryptoName}}</div>
       <div class="crypto-list__subtitle small font-weight-medium">{{crypto.symbol}}</div>
     </div>
     <div style="text-align: right; ">

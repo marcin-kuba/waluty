@@ -1,4 +1,6 @@
 import { Component } from '@angular/core'
+import { ActivatedRoute } from '@angular/router'
+
 
 @Component({
   selector: 'app-crypto-details',
@@ -6,4 +8,9 @@ import { Component } from '@angular/core'
   styleUrls: ['./crypto-details.component.scss'],
 })
 export class CryptoDetailsComponent {
+  public cryptoSymbol: string
+
+  constructor(private route: ActivatedRoute) {
+    route.params.subscribe(params => this.cryptoSymbol = params.cryptoSymbol)
+  }
 }

@@ -1,25 +1,22 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { CryptoModel } from '../model/crypto.model'
+
 
 @Pipe({
   name: 'cryptoName',
 })
 export class CryptoNamePipe implements PipeTransform {
 
-  transform(value: CryptoModel): string {
-    let cryptoName = ''
-
-    switch (value.symbol) {
-      case 'TRX': cryptoName = 'Tron'; break
-      case 'BTC': cryptoName = 'Bitcoin'; break
-      case 'ETH': cryptoName = 'Ethereum'; break
-      case 'LSK': cryptoName = 'Lisk'; break
-      case 'XLM': cryptoName = 'Stellar Lumens'; break
-      case 'XRP': cryptoName = 'Ripple'; break
-      case 'VRC': cryptoName = 'VeriCoin'; break
-      case 'XVC': cryptoName = 'Vcash'; break
+  transform(symbol: string): string {
+    switch (symbol) {
+      case 'TRX': return 'Tron'
+      case 'BTC': return  'Bitcoin'
+      case 'ETH': return 'Ethereum'
+      case 'LSK': return 'Lisk'
+      case 'XLM': return 'Stellar Lumens'
+      case 'XRP': return 'Ripple'
+      case 'VRC': return 'VeriCoin'
+      case 'XVC': return 'Vcash'
+      default: return symbol
     }
-
-    return cryptoName
   }
 }

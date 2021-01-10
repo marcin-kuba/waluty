@@ -29,12 +29,12 @@ registerLocaleData(localePl)
     CommonModule,
     HttpClientModule,
 
-    //  ngrx
+    // ngrx
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(appEffects),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
 
-    // ngProgess
+    // ngProgress
     NgProgressModule.withConfig({spinner: false}),
     NgProgressHttpModule,
 

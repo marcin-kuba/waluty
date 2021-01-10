@@ -1,1 +1,12 @@
+<app-header>
+  <button mat-icon-button [routerLink]="'/'" color="primary" class="left" aria-label="Back to Dashboard">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <div fxLayout fxLayoutAlign="center center">
+    <i class="crypto-details__header-icon cc" [ngClass]="cryptoSymbol"></i>
+    <h1 class="crypto-details__header-crypto-name">{{ cryptoSymbol | cryptoName }}</h1>
+  </div>
+</app-header>
+
 <p>crypto-details works!</p>

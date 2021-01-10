@@ -1,0 +1,14 @@
+@import "../../../../../styles/variables";
+
+
+.crypto-details__header-icon {
+  height: ($icon-size + 1);
+  margin-right: ($icon-size / 4);
+  font-size: $icon-size;
+  line-height: 1;
+}
+
+.crypto-details__header-crypto-name {
+  font-size: $h3-font-size;
+  line-height: $h3-line-height;
+}
