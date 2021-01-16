@@ -4,6 +4,16 @@
 
 const { SpecReporter } = require('jasmine-spec-reporter');
 
+const readParamsFromCli = () => {
+  const params = {}
+  process.argv.filter(it => it.startsWith('--param.')).forEach(pair => {
+    const parts = pair.split('=')
+    const name = parts[0].trim().replace('--param.', '')
+    params[name] = parts[1] && parts[1].trim() || true
+  })
+  return params
+}
+
 /**
  * @type { import("protractor").Config }
  */
@@ -19,7 +29,7 @@ exports.config = {
     },
   },
   directConnect: true,
-  baseUrl: 'http://localhost:4200/',
+  baseUrl: readParamsFromCli().baseUrl || 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
