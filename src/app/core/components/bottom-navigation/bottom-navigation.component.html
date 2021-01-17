@@ -3,7 +3,8 @@
     <a *ngFor="let navItem of navItems"
        class="bottom-navigation__item"
        fxFlex fxLayout="column" fxLayoutAlign="center center"
-       matRipple matRippleRadius="50" matRippleColor="rgba(0, 0, 0, .035)" [matRippleCentered]="true">
+       matRipple matRippleRadius="50" matRippleColor="rgba(0, 0, 0, .035)" [matRippleCentered]="true"
+       [routerLink]="navItem.link">
       <mat-icon class="opacity-5">{{ navItem.icon }}</mat-icon>
       <span class="small">{{ navItem.label }}</span>
     </a>

@@ -3,6 +3,7 @@ import { Component } from '@angular/core'
 export interface BottomNavigationItem {
   label: string
   icon: string
+  link: string
 }
 
 @Component({
@@ -12,8 +13,8 @@ export interface BottomNavigationItem {
 })
 export class BottomNavigationComponent {
   public navItems: BottomNavigationItem[] = [
-    {label: 'Str. główna', icon: 'home'},
-    {label: 'Kalkulator', icon: 'calculate'},
-    {label: 'Ustawienia', icon: 'settings'},
+    {label: 'Str. główna', icon: 'home', link: '/'},
+    {label: 'Kalkulator', icon: 'calculate', link: ''},
+    {label: 'Ustawienia', icon: 'settings', link: ''},
   ]
 }
