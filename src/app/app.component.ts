@@ -5,12 +5,14 @@ import { Store } from '@ngrx/store'
 import { SharedState } from './shared/store/shared.state'
 import { checkIsOnline } from './shared/store/shared.actions'
 import { RouterHistoryService } from './shared/services/router-history.service'
+import { routeAnimation } from './core/animations/route.animation'
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  animations: [routeAnimation],
 })
 export class AppComponent implements OnInit {
 

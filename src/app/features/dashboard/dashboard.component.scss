@@ -1,6 +1,12 @@
 @import "../../../styles/variables";
 
 
+:host {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .home__logo {
   font-size: 12px;
   font-weight: map-get($font-weights, "light");

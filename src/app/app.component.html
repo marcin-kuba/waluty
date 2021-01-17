@@ -1,8 +1,9 @@
 <app-progress></app-progress>
 
 <div class="app-content" fxLayout="column">
-  <main class="app-content__main" fxLayout="column" fxFlex="grow">
-    <router-outlet></router-outlet>
+  <main class="app-content__main" fxLayout="column" fxFlex="grow"
+        [@routeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+    <router-outlet #outlet="outlet"></router-outlet>
   </main>
 
   <app-bottom-navigation></app-bottom-navigation>
