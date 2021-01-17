@@ -8,3 +8,8 @@ export const selectCryptoList = createSelector(
   selectCryptoState,
   (state: CryptoState) => state.cryptoList,
 )
+
+export const selectCryptoDetails = createSelector(
+  selectCryptoState,
+  (state: CryptoState) => state.selectedCryptoDetails,
+)

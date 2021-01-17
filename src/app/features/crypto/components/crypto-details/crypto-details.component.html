@@ -9,4 +9,8 @@
   </div>
 </app-header>
 
-<p>crypto-details works!</p>
+<div *ngIf="cryptoDetails$ | async as cryptoDetails">
+  <pre>{{ cryptoDetails | json }}</pre>
+</div>
+
+<p *ngIf="(cryptoDetails$ | async) === null" class="text-muted">Loading...</p>

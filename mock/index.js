@@ -43,3 +43,51 @@ server.get(['/cryptocurrency'], (req, res) => {
 
   setTimeout(() => res.json({data}), 1500)
 })
+
+server.get(['/cryptocurrency/:symbol'], (req, res) => {
+  const data = {
+    symbol: req.params.symbol,
+    lastupdated: faker.date.past(),
+    quote: {
+      PLN: {
+        price: parseFloat(faker.finance.amount(60000, 90000)),
+        percent_change_1h: parseFloat(faker.random.number({min: -1, max: 1, precision: 0.01}).toFixed(2)),
+        percent_change_6h: parseFloat(faker.random.number({min: -2, max: 2, precision: 0.01}).toFixed(2)),
+        percent_change_24h: parseFloat(faker.random.number({min: -8, max: 8, precision: 0.01}).toFixed(2)),
+        percent_change_7d: parseFloat(faker.random.number({min: -35, max: 35, precision: 0.01}).toFixed(2)),
+      },
+      USD: {
+        price: parseFloat(faker.finance.amount(18000, 28000)),
+        percent_change_1h: parseFloat(faker.random.number({min: -1, max: 1, precision: 0.01}).toFixed(2)),
+        percent_change_6h: parseFloat(faker.random.number({min: -2, max: 2, precision: 0.01}).toFixed(2)),
+        percent_change_24h: parseFloat(faker.random.number({min: -8, max: 8, precision: 0.01}).toFixed(2)),
+        percent_change_7d: parseFloat(faker.random.number({min: -35, max: 35, precision: 0.01}).toFixed(2)),
+      },
+      EUR: {
+        price: parseFloat(faker.finance.amount(14000, 22000)),
+        percent_change_1h: parseFloat(faker.random.number({min: -1, max: 1, precision: 0.01}).toFixed(2)),
+        percent_change_6h: parseFloat(faker.random.number({min: -2, max: 2, precision: 0.01}).toFixed(2)),
+        percent_change_24h: parseFloat(faker.random.number({min: -8, max: 8, precision: 0.01}).toFixed(2)),
+        percent_change_7d: parseFloat(faker.random.number({min: -35, max: 35, precision: 0.01}).toFixed(2)),
+      },
+    },
+    historical: {
+      USD: [
+        {
+          date: "2018-06-14T10:00:00.000Z",
+          price: 9283.03,
+        },
+        {
+          date: "2018-06-14T11:00:00.000Z",
+          price: 9283.03,
+        },
+        {
+          date: "2018-06-14T12:00:00.000Z",
+          price: 9283.03,
+        },
+      ]
+    },
+  }
+
+  setTimeout(() => res.json({data}), 1500)
+})
