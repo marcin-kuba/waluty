@@ -1,14 +1,21 @@
-const faker = require('faker');
+const jsonServer = require('json-server')
+const server = jsonServer.create()
+const middlewares = jsonServer.defaults()
+const faker = require('faker')
 
-module.exports = () => {
-  const data = {
-    cryptocurrency: {data: []},
-  };
+server.use(middlewares)
+server.use(jsonServer.bodyParser)
 
+server.listen(3000, () => {
+  console.log('JSON Server is running...')
+})
+
+server.get(['/cryptocurrency'], (req, res) => {
+  const data = []
   const cryptoCurrencySymbols = ['TRX', 'BTC', 'LSK', 'ETH', 'XLM', 'XRP', 'VRC', 'XVC']
 
   for (let i = 0; i < cryptoCurrencySymbols.length; i++) {
-    data.cryptocurrency.data.push({
+    data.push({
       symbol: cryptoCurrencySymbols[i],
       lastupdated: faker.date.past(),
       quote: {
@@ -34,7 +41,5 @@ module.exports = () => {
     })
   }
 
-  return data
-};
-
-// api methods: https://github.com/Marak/faker.js#api-methods
+  setTimeout(() => res.json({data}), 1500)
+})

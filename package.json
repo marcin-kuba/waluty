@@ -14,7 +14,7 @@
     "lint:scss": "stylelint \"./src/**/*.scss\"",
     "lint-fix": "ng lint --fix",
     "e2e": "ng e2e",
-    "mock": "json-server ./mock/index.js --routes ./mock/routes.json"
+    "mock": "node ./mock/index.js"
   },
   "private": true,
   "dependencies": {
