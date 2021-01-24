@@ -2,13 +2,14 @@
 
 
 .app-content {
-  min-height: 100vh;
+  height: 100%;
 }
 
 .app-content__main {
-  margin-bottom: $mat-toolbar-height-desktop;
+  max-height: none !important;
+  padding-bottom: $mat-toolbar-height-desktop;
 
   @media ($mat-xsmall) {
-    margin-bottom: $mat-toolbar-height-mobile;
+    padding-bottom: $mat-toolbar-height-mobile;
   }
 }
