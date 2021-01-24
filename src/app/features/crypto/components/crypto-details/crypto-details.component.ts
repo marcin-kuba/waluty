@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { AfterViewInit, Component } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Observable } from 'rxjs'
 import { CryptoDetailsModel } from '../../model/crypto.model'

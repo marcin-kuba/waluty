@@ -10,6 +10,7 @@
 </app-header>
 
 <div *ngIf="cryptoDetails$ | async as cryptoDetails">
+  <app-crypto-chart [data]="cryptoDetails.historical['USD']"></app-crypto-chart>
   <pre>{{ cryptoDetails | json }}</pre>
 </div>
 
