@@ -17,6 +17,6 @@ export class CryptoApiService {
   }
 
   readCryptoDetails(cryptoSymbol: string) {
-    return this.http.get(`${environment.baseUrl}${CRYPTO_API_ENDPOINT}${cryptoSymbol}`)
+    return this.http.get(`${environment.baseUrl}${CRYPTO_API_ENDPOINT}${cryptoSymbol}?currency=USD&range=1D`)
   }
 }
