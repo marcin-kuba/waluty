@@ -45,6 +45,7 @@ server.get(['/cryptocurrency'], (req, res) => {
 })
 
 server.get(['/cryptocurrency/:symbol'], (req, res) => {
+  console.log(req.query.currency)
   const data = {
     symbol: req.params.symbol,
     lastupdated: faker.date.past(),

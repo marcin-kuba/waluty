@@ -1,4 +1,4 @@
-FROM node:14.3.0-stretch as nodejs
+FROM node:15.8.0-stretch as nodejs
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install

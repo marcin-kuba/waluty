@@ -19,6 +19,10 @@ export class CryptoDetailsComponent {
   public cryptoDetails$: Observable<CryptoDetailsModel>
 
   constructor(private route: ActivatedRoute, private store: Store<AppState>) {
+    let someDay = new Date('2021-01-28')
+    someDay.setTime(someDay.getTime() + (2*60*60*1000))
+
+    console.log(someDay.toISOString())
     route.params.subscribe(params => this.cryptoSymbol = params.cryptoSymbol)
     this.cryptoDetails$ = store.pipe(select(selectCryptoDetails), filter(i => i && i.symbol === this.cryptoSymbol))
     store.dispatch(readCryptoDetails({cryptoSymbol: this.cryptoSymbol}))

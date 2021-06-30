@@ -1,5 +1,8 @@
 @import "../../../../../styles/variables";
 
+:host {
+  background: red
+}
 
 .crypto-details__header-icon {
   height: ($icon-size + 1);

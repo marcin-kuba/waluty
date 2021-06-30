@@ -13,10 +13,10 @@ pipeline {
         git branch: 'main', credentialsId: 'githubMarcinCredential', url: 'git@github.com:marcin-kuba/waluty-frontend.git'
       }
     }
-    stage('docker pull nodejs') {
+    stage('docker run nodejs') {
       agent {
         docker {
-          image 'node:14.3.0-stretch'
+          image 'node:15.8.0-stretch'
           reuseNode true
         }
       }

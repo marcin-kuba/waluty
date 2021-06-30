@@ -25,6 +25,7 @@
   line-height: 1.25;
   text-decoration: none;
   transition: color $transition-duration-base $transition-timing-function-base;
+  -webkit-tap-highlight-color: transparent;
 
   &.active {
     color: map-get($app-primary, 700);

@@ -23,3 +23,11 @@ a {
     text-decoration: $link-hover-decoration;
   }
 }
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}

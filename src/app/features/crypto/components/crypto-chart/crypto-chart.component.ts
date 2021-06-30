@@ -53,15 +53,16 @@ export class CryptoChartComponent implements OnInit, AfterViewInit {
         xAxes: [
           {
             ticks: {
-              autoSkip: true,
+              autoSkip: false,
               autoSkipPadding: 10,
               maxRotation: 0,
               fontSize: 11,
               fontColor: 'rgba(0, 0, 0, .62)',
               fontFamily: 'Roboto,HelveticaNeue,Arial,sans-serif',
               callback: (value: string) => {
+                const output = value.substring(11, 16)
                 this.xAxesTickIndex++
-                return (this.xAxesTickIndex !== 1) ? value.substring(11, 16) : null
+                return (this.xAxesTickIndex !== 1) ? (output.substring(3, 5) === '00' && (output.substring(0, 2) === '01' || output.substring(0, 2) === '06' || output.substring(0, 2) === '11' || output.substring(0, 2) === '17' || output.substring(0, 2) === '22') ? output : null) : null
               },
             },
             gridLines: {
